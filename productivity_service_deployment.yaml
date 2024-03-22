@@ -1,0 +1,39 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: developeriq-productivity-calc
+spec:
+  selector:
+    app: developeriq-productivity-calc
+  ports:
+  - name: http
+    protocol: "TCP"
+    port: 8002 #Port which kubernetes service runs on
+    targetPort: 8002
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: developeriq-productivity-calc
+spec:
+  selector:
+    matchLabels:
+      app: developeriq-productivity-calc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: developeriq-productivity-calc
+    spec:
+      imagePullSecrets:
+        - name: developeriqsecret
+      containers:
+      - name: developeriq-productivity-calc
+        image: 227376926882.dkr.ecr.eu-north-1.amazonaws.com/cloudcomputingcw:latest
+        command: ["python3","ProductivityCalculationService/productivity_calculation_service.py"]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8002
