@@ -6,17 +6,17 @@ from werkzeug.urls import url_quote
 app = Flask(__name__)
 
 # Establish a connection to the database
-def create_connection():
-    connection = mysql.connector.connect(
-        host="isuru-database-2.c1wakw0y4b18.eu-north-1.rds.amazonaws.com",
-        user="admin",
-        password="cde3CDE#",
-        database="isuru_database_table_2"
-    )
-    return connection
+#def create_connection():
+    # connection = mysql.connector.connect(
+    #     host="isuru-database-2.c1wakw0y4b18.eu-north-1.rds.amazonaws.com",
+    #     user="admin",
+    #     password="cde3CDE#",
+    #     database="isuru_database_table_2"
+    # )
+    # return connection
 
 # Call create_connection() function to establish a connection to the database
-db = create_connection()
+# db = create_connection()
 
 # Endpoint for getting GitHub code changes
 # Example URL: http://127.0.0.1:5000/get_github_code_changes?owner_username=SachiniTen&repository=Bootcamp&developer_username=SachiniTen

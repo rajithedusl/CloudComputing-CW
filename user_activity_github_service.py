@@ -10,44 +10,44 @@ import boto3
 from botocore.exceptions import ClientError
 import json
 
-def get_secret():
-
-    secret_name = "database_secret"
-    region_name = "eu-north-1"
-
-    # Create a Secrets Manager client
-    session = boto3.session.Session()
-    client = session.client(
-        service_name='secretsmanager',
-        region_name=region_name
-    )
-
-    try:
-        get_secret_value_response = client.get_secret_value(
-            SecretId=secret_name
-        )
-    except ClientError as e:
-        # For a list of exceptions thrown, see
-        # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-        raise e
-
-    secret = json.loads(get_secret_value_response['SecretString'])
-
-    return secret
+# def get_secret():
+#
+#     secret_name = "database_secret"
+#     region_name = "eu-north-1"
+#
+#     # Create a Secrets Manager client
+#     session = boto3.session.Session()
+#     client = session.client(
+#         service_name='secretsmanager',
+#         region_name=region_name
+#     )
+#
+#     try:
+#         get_secret_value_response = client.get_secret_value(
+#             SecretId=secret_name
+#         )
+#     except ClientError as e:
+#         # For a list of exceptions thrown, see
+#         # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+#         raise e
+#
+#     secret = json.loads(get_secret_value_response['SecretString'])
+#
+#     return secret
 
 # Establish a connection to the database
-def create_connection():
-    connection = mysql.connector.connect(
-        host=cred['host'],
-        port=cred['port'],
-        user=cred['username'],
-        password=cred['password'],
-        database=cred['dbname']
-    )
-    return connection
+# def create_connection():
+#     connection = mysql.connector.connect(
+#         host=cred['host'],
+#         port=cred['port'],
+#         user=cred['username'],
+#         password=cred['password'],
+#         database=cred['dbname']
+#     )
+#     return connection
 
 # Call create_connection() function to establish a database connection
-db = create_connection()
+# db = create_connection()
 
 
 def get_repo_commits(owner_name, repo_name, developer_user):

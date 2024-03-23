@@ -32,7 +32,7 @@ spec:
         - name: developeriqsecret
       containers:
       - name: developeriq-cache-update-check
-        image: 227376926882.dkr.ecr.eu-north-1.amazonaws.com/cloudcomputingcw:latest
+        image: 516480225104.dkr.ecr.eu-north-1.amazonaws.com/cloudcomputingcw:latest
         imagePullPolicy: Always
         command: ["python3","UpdateCheckService/github_data_api.py"]
         ports:
