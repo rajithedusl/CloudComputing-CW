@@ -20,7 +20,7 @@ every user
 app = FastAPI()
 ######e
 GITHUB_ACCESS_TOKEN_PATH = "./GithubToken.txt"
-USER_NAME = "IsuruVindula"
+USER_NAME = "rajithedusl"
 
 if not os.path.exists(GITHUB_ACCESS_TOKEN_PATH):
     GITHUB_ACCESS_TOKEN_PATH = "../GithubToken.txt"
