@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  db-update-check-service:
+    build: .
+    container_name: db-update-check-service
+    restart: always
+    volumes:
+    - ./:/DBUpdateCheckService/
+    # env_file:
+    #   - aws_creds.env
+    # network_mode: host
+    ports:
+      - "8001:8001"
+    # command: python3 /DeveloperIQ/DBUpdateCheckService/github_data_api.py
+    command: sh -c "uvicorn github_data_api:app --host 0.0.0.0 --port 8001"
+
+
+
+  # db-update-service:
+  #   build: ./
+  #   container_name: db-update-service
+  #   restart: always
+  #   volumes:
+  #   - ./:/DeveloperIQ/
+  #   env_file:
+  #     - aws_creds.env
+  #   command: python3 DBUpdateService/db_update_service.py --org RasaHQ --repo rasa --delay 5
+  #   network_mode: host
+  #   depends_on: [db-update-check-service]
+
+  # productivity-calculation-service:
+  #   build: ./
+  #   container_name: productivity-calculation-service
+  #   restart: always
+  #   ports:
+  #   - 8002:8002
+  #   volumes:
+  #   - ./:/DeveloperIQ/
+  #   env_file:
+  #     - aws_creds.env
+  #   command: python3 ProductivityCalculationService/productivity_calculation_service.py
+  #   depends_on: [db-update-service]
+
+
+
