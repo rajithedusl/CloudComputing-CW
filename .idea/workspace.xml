@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8789b30c-4a04-463f-bf99-9dd2e81b42d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/UpdateCheckService/GithubToken.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateCheckService/GithubToken.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UpdateCheckService/github_data_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateCheckService/github_data_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateCheckService/GithubToken.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
