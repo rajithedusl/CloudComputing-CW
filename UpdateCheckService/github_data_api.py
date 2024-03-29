@@ -18,15 +18,15 @@ every user
 """
 
 app = FastAPI()
-######e
-GITHUB_ACCESS_TOKEN_PATH = "./GithubToken.txt"
-USER_NAME = "rajithedusl"
-
-if not os.path.exists(GITHUB_ACCESS_TOKEN_PATH):
-    GITHUB_ACCESS_TOKEN_PATH = "../GithubToken.txt"
-
-with open(GITHUB_ACCESS_TOKEN_PATH, 'r') as token_file:
-    token = token_file.readline()
+# ######e
+# GITHUB_ACCESS_TOKEN_PATH = "./GithubToken.txt"
+# USER_NAME = "rajithedusl"
+#
+# if not os.path.exists(GITHUB_ACCESS_TOKEN_PATH):
+#     GITHUB_ACCESS_TOKEN_PATH = "../GithubToken.txt"
+#
+# with open(GITHUB_ACCESS_TOKEN_PATH, 'r') as token_file:
+#     token = token_file.readline()
 
 @app.get("/")
 def ping():
