@@ -18,7 +18,7 @@ from DecimalEncoder import DecimalEncoder
 
 app = FastAPI()
 
-table_name = "DeveloperIQ"
+table_name = "seshat"
 primary_key_column_name = "contributor_login"
 columns = ["contribution_stats"]
 # DB = boto3.resource('dynamodb')

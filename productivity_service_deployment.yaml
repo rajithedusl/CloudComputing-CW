@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: developeriq-productivity-calc
+  name: seshat-productivity-calc
 spec:
   selector:
-    app: developeriq-productivity-calc
+    app: seshat-productivity-calc
   ports:
   - name: http
     protocol: "TCP"
@@ -17,21 +17,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: developeriq-productivity-calc
+  name: seshat-productivity-calc
 spec:
   selector:
     matchLabels:
-      app: developeriq-productivity-calc
+      app: seshat-productivity-calc
   replicas: 1
   template:
     metadata:
       labels:
-        app: developeriq-productivity-calc
+        app: seshat-productivity-calc
     spec:
       imagePullSecrets:
-        - name: developeriqsecret
+        - name: seshatsecret
       containers:
-      - name: developeriq-productivity-calc
+      - name: seshat-productivity-calc
         image: 516480225104.dkr.ecr.eu-north-1.amazonaws.com/jenkins-docker-build:latest
         command: ["python3","ProductivityCalculationService/productivity_calculation_service.py"]
         imagePullPolicy: Always

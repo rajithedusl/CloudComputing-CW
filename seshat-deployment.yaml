@@ -13,7 +13,7 @@ spec:
         app: db-update-check
     spec:
       imagePullSecrets:
-        - name: developeriqsecret
+        - name: seshatsecret
       containers:
         - name: db-update-check-container
           image: dbupdatecheckservice-db-update-check-service
